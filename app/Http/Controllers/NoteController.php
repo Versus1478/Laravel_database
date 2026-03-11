@@ -172,4 +172,17 @@ class NoteController extends Controller
         ], Response::HTTP_OK);
     }
 
+    public function pinned()
+    {
+        $notes = DB::table('notes')
+            ->whereNull('deleted_at')
+            ->where('is_pinned', true)
+            ->orderBy('updated_at', 'desc')
+            ->get();
+
+        return response()->json([
+            'notes' => $notes
+        ]);
+    }
+
 }

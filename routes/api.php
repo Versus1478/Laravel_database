@@ -15,3 +15,5 @@ Route::get('users/{user}/notes', [NoteController::class, 'userNotesWithCategorie
 Route::get('notes-actions/search', [NoteController::class, 'search']);
 
 Route::apiResource('categories', CategoryController::class);
+
+Route::get('notes/pinned', [NoteController::class, 'pinned']);
