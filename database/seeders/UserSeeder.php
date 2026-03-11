@@ -44,6 +44,26 @@ class UserSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'first_name'=>'Anna',
+                'last_name'=>'Novakova',
+                'email'=>'anna@ukf.sk',
+                'password'=>Hash::make('123'),
+                'role'=>'user',
+                'premium_until' => now()->addDays(30),
+                'created_at'=>now(),
+                'updated_at'=>now()
+            ],
+            [
+                'first_name'=>'Peter',
+                'last_name'=>'Hrasko',
+                'email'=>'peter@ukf.sk',
+                'password'=>Hash::make('123'),
+                'role'=>'user',
+                'premium_until' => null,
+                'created_at'=>now(),
+                'updated_at'=>now()
+            ]
         ]);
     }
 }
